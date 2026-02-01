@@ -3,93 +3,62 @@
 Course: Advanced Databases (NoSQL)
 
 **Overview**
-
 Personal Blog Platform is a full-stack web application developed for the Advanced Databases (NoSQL) course.
 The project demonstrates MongoDB data modeling, RESTful API design, authentication, and frontend–backend integration.
 
 **Technologies**
-
 Backend: Node.js, Express
-
 Database: MongoDB
-
 Frontend: HTML, CSS, JavaScript
-
 Authentication: JWT
 
-Features
+**Features**
+- User registration and login
+- Create, read, update, and delete blog posts
+- Image upload for posts
+- Embedded comments inside posts
+- Aggregation-based statistics endpoint
+- JWT authentication and authorization
 
-User registration and login
-
-Create, read, update, and delete blog posts
-
-Image upload for posts
-
-Embedded comments inside posts
-
-Aggregation-based statistics endpoint
-
-JWT authentication and authorization
-
-Database Design
-
+**Database Design**
 Users – stored as a separate collection (referenced model)
-
 Posts – reference users and embed comments (hybrid NoSQL model)
 
-REST API (Main Endpoints)
+**REST API (Main Endpoints)**
 Authentication
-
 POST /api/auth/register
-
 POST /api/auth/login
 
 Posts
-
 GET /api/posts
-
 POST /api/posts
-
 PATCH /api/posts/:id
-
 DELETE /api/posts/:id
 
 Comments (Embedded)
-
 POST /api/posts/:id/comments
-
 DELETE /api/posts/:id/comments/:commentId
 
 Aggregation
-
 GET /api/posts/stats
-
 MongoDB Concepts Used
 
-Embedded and referenced documents
-
+**Embedded and referenced documents**
 Advanced update operators ($push, $pull, $set)
-
 Multi-stage aggregation pipeline
-
 Compound index for query optimization
 
-Frontend Pages
-
+**Frontend Pages**
 Login
-
 Register
-
 Homepage (posts & comments)
-
 Account page
 
-Run Project
+**Run Project**
 npm install
 npm start
 
-
-Environment variables required:
+**Environment variables required:**
 
 MONGO_URI=...
 JWT_SECRET=...
